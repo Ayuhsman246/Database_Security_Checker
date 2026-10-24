@@ -63,7 +63,7 @@ Database_Security_Checker/
 ## Proof of Execution & Results
 
 > **Important Note for Recruiters & Audit Reviewers:**  
-> This code was **successfully executed and verified locally** against a simulated test environment (`setup_test_db.sql`) containing the 4 standard synthetic vulnerabilities. You do not need to configure a local MySQL instance to verify the tool's effectiveness.
+> This code was **successfully executed and verified locally** against a simulated test environment (`setup_test_db.sql`) containing 4 synthetic vulnerable accounts. The anonymous account violates two controls (no password and anonymous account), so the tool reports 5 findings. You do not need to configure a local MySQL instance to verify the tool's effectiveness.
 
 Please inspect the following repository files as verifiable evidence that the data extraction and exception reporting pipeline operates successfully:
 
@@ -72,6 +72,7 @@ Please inspect the following repository files as verifiable evidence that the da
    Severity,User,Host,Finding Description
    High,test_admin,localhost,Global administrative privileges detected.
    Medium,test_remote,%,Account exposed to wildcard '%' IP addresses.
+   Critical,ANONYMOUS,localhost,Account has no password.
    Critical,test_nopass,localhost,Account has no password.
    High,ANONYMOUS,localhost,Anonymous default account detected.
    ```
@@ -122,7 +123,7 @@ python main.py
 ```text
 Starting Database Security Data Extraction...
 
-Audit complete! Extracted 4 anomalies.
+   Audit complete! Extracted 5 anomalies.
 [+] Audit CSV Working Papers exported to   : audit_findings.csv
 [+] Proof-of-Work Evidence generated at     : AUDIT_EVIDENCE.md
 ```

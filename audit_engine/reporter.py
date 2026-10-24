@@ -37,7 +37,7 @@ def generate_audit_evidence_md(findings: List[Dict[str, str]], filename: str = "
     content = f"""# AUDIT EVIDENCE: Test Execution & Verification Log
 
 **Project Name:** Database Security Configuration Checker (CAAT Engine)  
-**Target Organization:** KPMG IT Audit Portfolio Verification  
+**Purpose:** IT Audit Portfolio Verification  
 **Execution Timestamp:** `{now_utc}`  
 **ISO Timestamp:** `{now_iso}`  
 **Execution Status:** `SUCCESS - {len(findings)} Anomalies Extracted`  
@@ -107,7 +107,7 @@ The automated CAAT pipeline successfully intercepted and logged the following se
 ---
 
 ## 4. Auditor Sign-Off & Portfolio Attestation
-- **Analyst Role:** AI/ML & Data Analytics Student (KPMG IT Audit Candidate)
+- **Analyst Role:** AI/ML & Data Analytics Student (IT Audit Portfolio Project)
 - **Supervising Role:** Senior Data Engineer & IT Audit Manager
 - **Verification Method:** Programmatic Extraction via Modular Python CAAT Engine (`audit_engine`)
 - **Evidence Integrity:** Automatically compiled at runtime; matches CSV working papers (`audit_findings.csv`) 1:1.

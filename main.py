@@ -4,7 +4,7 @@
 Database Security Configuration Checker (MySQL) - CAAT Framework
 ===============================================================================
 Role: Senior Data Engineer & IT Audit Manager
-Context: KPMG IT Audit Portfolio Project
+Context: IT Audit Portfolio Project
 Purpose: Orchestrates modular database security auditing, extracts security 
          anomalies from mysql.user, exports audit_findings.csv, and dynamically 
          generates the AUDIT_EVIDENCE.md proof of execution.

@@ -1,10 +1,10 @@
 # AUDIT EVIDENCE: Test Execution & Verification Log
 
 **Project Name:** Database Security Configuration Checker (CAAT Engine)  
-**Target Organization:** KPMG IT Audit Portfolio Verification  
-**Execution Timestamp:** `2026-10-24 11:15:00 UTC` (`2026-10-24 16:45:00 IST`)  
-**ISO Timestamp:** `2026-10-24T16:45:00.000000+05:30`  
-**Execution Status:** `SUCCESS - 4 Anomalies Extracted`  
+**Purpose:** IT Audit Portfolio Verification  
+**Execution Timestamp:** `2026-10-24 14:24:56 UTC`  
+**ISO Timestamp:** `2026-10-24T19:54:56.866526+05:30`  
+**Execution Status:** `SUCCESS - 5 Anomalies Extracted`  
 **Target Environment:** Localhost MySQL Server (`database = mysql`)  
 **Evidence Artifact:** `audit_findings.csv`  
 
@@ -16,8 +16,8 @@ This document serves as permanent, verifiable audit evidence demonstrating that 
 | Metric | Result |
 | :--- | :--- |
 | **Population Tested** | Full Catalog (`mysql.user`) |
-| **Total Anomalies Extracted** | `4` |
-| **Critical Severity Outliers** | `1` |
+| **Total Anomalies Extracted** | `5` |
+| **Critical Severity Outliers** | `2` |
 | **High Severity Outliers** | `2` |
 | **Medium Severity Outliers** | `1` |
 | **Low Severity Outliers** | `0` |
@@ -55,13 +55,14 @@ The automated CAAT pipeline successfully intercepted and logged the following se
 | :--- | :--- | :--- | :--- | :--- |
 | **High** | `test_admin` | `localhost` | Global administrative privileges detected. | ITGC AC-1 (Privileges) |
 | **Medium** | `test_remote` | `%` | Account exposed to wildcard '%' IP addresses. | ITGC AC-2 (Network) |
+| **Critical** | `ANONYMOUS` | `localhost` | Account has no password. | ITGC AC-3 (Authentication) |
 | **Critical** | `test_nopass` | `localhost` | Account has no password. | ITGC AC-3 (Authentication) |
 | **High** | `ANONYMOUS` | `localhost` | Anonymous default account detected. | ITGC AC-4 (Lifecycle) |
 
 ---
 
 ## 4. Auditor Sign-Off & Portfolio Attestation
-- **Analyst Role:** AI/ML & Data Analytics Student (KPMG IT Audit Candidate)
+- **Analyst Role:** AI/ML & Data Analytics Student (IT Audit Portfolio Project)
 - **Supervising Role:** Senior Data Engineer & IT Audit Manager
 - **Verification Method:** Programmatic Extraction via Modular Python CAAT Engine (`audit_engine`)
 - **Evidence Integrity:** Automatically compiled at runtime; matches CSV working papers (`audit_findings.csv`) 1:1.
