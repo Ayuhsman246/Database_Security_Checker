@@ -1,0 +1,5 @@
+Severity,User,Host,Finding Description
+High,test_admin,localhost,Global administrative privileges detected.
+Medium,test_remote,%,Account exposed to wildcard '%' IP addresses.
+Critical,test_nopass,localhost,Account has no password.
+High,ANONYMOUS,localhost,Anonymous default account detected.
