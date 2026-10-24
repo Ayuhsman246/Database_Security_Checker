@@ -4,7 +4,7 @@
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![MySQL 8.0+](https://img.shields.io/badge/MySQL-8.0+-4479A1.svg?logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Audit Methodology](https://img.shields.io/badge/Audit-CAAT%20%7C%20ITGC-success.svg)](https://www.isaca.org/)
-[![Career Track](https://img.shields.io/badge/Target-KPMG%20IT%20Audit-00338D.svg)](https://kpmg.com/)
+[![Domain](https://img.shields.io/badge/Domain-IT%20Audit-00338D.svg)](https://www.isaca.org/)
 [![Execution Status](https://img.shields.io/badge/Testing-Verified%20Local%20Run-blue.svg)](AUDIT_EVIDENCE.md)
 
 An enterprise-grade, modular **Computer-Assisted Audit Technique (CAAT)** built by an AI/ML and Data Analytics student to automate database logical access security assessments and compliance exception reporting for **IT General Controls (ITGC)**.
@@ -86,7 +86,7 @@ Please inspect the following repository files as verifiable evidence that the da
 - MySQL Server 8.0+
 - Install the official MySQL connector:
   ```bash
-  pip install mysql-connector-python
+  pip install -r requirements.txt
   ```
 
 ### 2. Provision the Synthetic Test Database
@@ -143,15 +143,8 @@ FLUSH PRIVILEGES;
 
 ---
 
-## Environment Teardown & Reset
+## Future Enhancements
 
-To cleanly purge the synthetic test users after verification, open `setup_test_db.sql`, uncomment the teardown block at the bottom, and execute:
-
-```sql
-DROP USER IF EXISTS 'test_admin'@'localhost';
-DROP USER IF EXISTS 'test_remote'@'%';
-DROP USER IF EXISTS 'test_nopass'@'localhost';
-DROP USER IF EXISTS ''@'localhost';
-FLUSH PRIVILEGES;
-```
-
+1. **More Security Checks:** Add checks for password expiry, dangerous privileges (such as `FILE` and `DROP`), and leftover default databases.
+2. **Fix Recommendations:** Add a column to the report that tells the user how to fix each finding.
+3. **Compare Past Runs:** Save each audit and show which issues are new and which have been fixed.
